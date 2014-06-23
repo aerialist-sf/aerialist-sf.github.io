@@ -1,0 +1,18 @@
+@font-face {
+  font-family: Aracne;
+  src: url(/static/fonts/ARACNE_regular.ttf);
+}
+@font-face {
+  font-family: AracneUC;
+  src: url(/static/fonts/ARACNE-ULTRA-CONDENSED_regular.ttf);
+}
+@font-face {
+  font-family: MonicasSalon;
+  src: url(/static/fonts/MonicasSalonShadowNF.ttf);
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+}
+
