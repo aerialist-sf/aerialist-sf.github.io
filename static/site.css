@@ -16,21 +16,45 @@ body {
   margin: 0;
   background-color: #000;
   color: rgb(186, 200, 213);
+  font-family: Aracne;
+  font-size: 14pt;
 }
 a {
   text-decoration: none;
 }
+p {
+  margin: .5em 0;
+  padding: 0 3em;
+}
 
 /* structure */
+.supercolumn {
+  width: 1400px;
+  min-height: 1000px;
+  margin: 0 auto;
+}
+body.page-index .supercolumn {
+  background: #000 url(/static/img/front.jpg) no-repeat 100% 0;
+}
+body.page-contact .supercolumn {
+  background: #000 url(/static/img/contact.jpg) no-repeat 100% 0;
+}
 .column {
   width: 1000px;
-  overflow: none;
+  overflow: auto;
   margin: 0 auto;
 }
 .half-col {
   width: 50%;
   overflow: none;
   float: left;
+}
+.half-col.first {
+  padding-top: 3em;
+}
+
+.centered {
+  text-align: center;
 }
 
 /* elements */
@@ -53,8 +77,6 @@ ul#navbar li a:visited {
   display: block;
   float: left;
   padding: .25em 0;
-  font-family: Aracne;
-  font-size: 18pt;
   color: rgb(186, 200, 213);
 }
 
@@ -85,6 +107,7 @@ ul#navbar li.active a {
 .bio-unit {
   font-family: AracneUC;
   font-size: 24pt;
+  letter-spacing: 1.6px;
 }
 
 .portrait {
@@ -93,3 +116,13 @@ ul#navbar li.active a {
 .portrait img {
   width: 630px;
 }
+
+.bigdot span {
+  color: rgb(201, 9, 213);
+  font-size: 5em;
+  line-height: .5em;
+}
+
+body.page-contact {
+}
+
