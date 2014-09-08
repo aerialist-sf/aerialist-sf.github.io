@@ -272,3 +272,13 @@ body.page-contact {
   color: #fff;
   text-decoration; underline;
 }
+#image-slider {
+}
+
+#image-slider ul li img {
+  height: 400px;
+}
+.thumb {
+  width: 128px;
+  max-height: 128px;
+}

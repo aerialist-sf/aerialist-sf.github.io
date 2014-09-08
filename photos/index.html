@@ -8,6 +8,21 @@
     <link type="text/css" rel="stylehseet" href="/static/jquery/css/jquery-ui.min.css" />
     <link type="text/css" rel="stylesheet" href="/static/site.css" />
     
+<link type="text/css" rel="stylesheet" href="/static/css/blueimp-gallery.css" />
+<script type="text/javascript">
+  $(document).ready(function() {
+      blueimp.Gallery(
+        //$.map($("#images").find("a"), function(el, i) { return el; }),
+        ["/static/slides/1-STK_4897 copy.jpg","/static/slides/2-STK_4899 copy.jpg","/static/slides/6-STK_4908 copy 2.jpg","/static/slides/Lagunitas:watermark.jpg"],
+        {
+container: "#blueimp-gallery-carousel",
+startSlideshow: false,
+          carousel: true
+        }
+      );
+    });
+</script>
+
   </head>
   <body class="page-photos">
     <div class="supercolumn">
@@ -27,7 +42,16 @@
         </ul>
     
         
-<div style="text-align: center;"><img src="/static/img/coming_soon.png" /></div>
+<div id="blueimp-gallery-carousel" class="blueimp-gallery blueimp-gallery-carousel">
+  <div class="slides"></div>
+  <h3 class="title"></h3>
+  <a class="prev">&lt;</a>
+  <a class="next">&gt;</a>
+  <a class="play-pause"></a>
+  <ol class="indicator"></ol>
+</div>
+<script type="text/javascript" src="/static/js/blueimp-helper.js"></script>
+<script type="text/javascript" src="/static/js/blueimp-gallery.js"></script>
 
       </div>
       <div id="book-dialog" title="Guide to Booking an Aerialist">
