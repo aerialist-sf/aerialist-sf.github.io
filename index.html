@@ -7,21 +7,32 @@
     <link type="text/css" rel="stylehseet" href="/static/jquery/css/jquery-ui.structure.min.css" />
     <link type="text/css" rel="stylehseet" href="/static/jquery/css/jquery-ui.min.css" />
     <link type="text/css" rel="stylesheet" href="/static/site.css" />
+    
+<script type="text/javascript">
+  $(document.body).ready(function() {
+    var top = $("body .supercolumn").height() - $("#site-credits").height() - 5;
+    var left = 0;
+    $("body .supercolumn").append($("#site-credits").detach());
+    $("#site-credits").offset({top:top, left:"0px"});
+    console.log("loaded");
+  });
+</script>
+
   </head>
   <body class="page-index">
     <div class="supercolumn">
       <div class="column">
         <ul id="navbar">
           
-          <li class="active"><a href="/">Home</a></li>
+          <li id="navtab-index" class="active"><a href="/">Home</a></li>
           
-          <li><a href="/photos/">Photos</a></li>
+          <li id="navtab-photos"><a href="/photos/">Photos</a></li>
           
-          <li><a href="/video/">Video</a></li>
+          <li id="navtab-video"><a href="/video/">Video</a></li>
           
-          <li><a href="/performances/">Performances</a></li>
+          <li id="navtab-bio"><a href="/bio/">Bio</a></li>
           
-          <li><a href="/contact/">Contact</a></li>
+          <li id="navtab-booking"><a href="/booking/">Booking</a></li>
           
         </ul>
     
@@ -31,39 +42,24 @@
     <div class="lead">CassandraDandra</div>
     <div class="sub">Aerialist &middot; Distinguished Circus entertainment</div>
   </div>
-  <div class="bio-unit">
-    Cassandra first appeared on stage in the womb.  The stage tracked her through youth as a dancer and deposited her in San Francisco to train with the circus.  She now performs and makes art on rope and aerial fabric, and specializes in wielding her striking height at high velocity.  Her imagination thrives between 20 and 30 feet above ground, where she grapples with human limitations and seeks glimpses of the sublime.
-  </div>
+  
 </div>
-<div class="half-col">
-  <div class="portrait">
-    
-  </div>
-</div>
-<div style="clear: both;">
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  SITE CREDITS<br/>
-  Photography by Shoot That Clown<br/>
-  Web genius by <a href="http://www.hoprocker.net/">hoprocker</a><br/>
+<div id="site-credits">
+  Photography by Josh Bowers |
+  Web genius by <a href="http://www.hoprocker.net/">hoprocker</a></div>
 </div>
 
-        <div id="book-now"><a href="#">&nbsp;</a></div>
       </div>
       <div id="book-dialog" title="Guide to Booking an Aerialist">
         <div class="content">
-          <p>Thinking of having an aerialist at your event? You're brilliant.  Here are a few pointers on how to make it happen.  </p>
+          <p>Thinking of having an aerialist at your event? Here are a few pointers.</p>
 
           <ul>
-            <li>What are you looking for? Cassandra can provide a feature act to a single piece of music, or ambient performance that sets a mood and lasts longer.  For an evening of entertainment, Cassandra can also organize multiple performers.</li>
-            <li>Aerial acts require a safe rigging point.  This requires access to the ceiling, an exposed structural beam (or professionally installed rigging point), and a minimum ceiling height of 18' for tissu or 20' for rope.  For outdoor performances, please contact Cassandra for more information.</li>
+            <li>Cassandra can provide a feature act to a single piece of music, or ambient performance that sets a mood and lasts longer.  For an evening of entertainment, Cassandra can also organize multiple performers.</li>
+            <li>Aerial acts require a safe rigging point.  This means access to the ceiling, an exposed structural beam (or professionally installed rigging point), and a minimum ceiling height of 18' for tissu or 20' for rope.  For outdoor performances, please contact for more information.</li>
           </ul>
 
-          <p>Contact Cassandra for more information and a quote!</p>
+          <p>Email Cassandra for more information and a quote.</p>
 
           <p style="text-align: center;"><a href="mailto:dandra.cassandra@gmail.com">dandra.cassandra@gmail.com</a></p>
         </div>
