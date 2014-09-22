@@ -13,18 +13,21 @@
   $(document).ready(function() {
       blueimp.Gallery(
         //$.map($("#images").find("a"), function(el, i) { return el; }),
-        ["/static/slides/1-STK_4897 copy.jpg","/static/slides/2-STK_4899 copy.jpg","/static/slides/6-STK_4908 copy 2.jpg","/static/slides/Lagunitas:watermark.jpg"],
+        [{"title":"Photo by Eric Gillet","href":"/static/slides/1_DSC_5003 copy.jpg"},{"title":"Photo by Eric Gillet","href":"/static/slides/2_DSC_5009 copy.jpg"},{"title":"Photo by Eric Gillet","href":"/static/slides/3_DSC_5014 copy.jpg"},{"title":"Photo by Eric Gillet","href":"/static/slides/4_DSC_5023 copy.jpg"},{"title":"Photo by Eric Gillet","href":"/static/slides/5_DSC_5034 copy.jpg"},{"title":"Photo by Cody Molica","href":"/static/slides/6_CodyMolicaLagunitas.jpg"},{"title":"Photo by Eric Gillet","href":"/static/slides/7_STK_4897 copy 2.jpg"},{"title":"Photo by Eric Gillet","href":"/static/slides/8_STK_4899 copy.jpg"},{"title":"Photo by Eric Gillet","href":"/static/slides/9_6-STK_4908 copy 2.jpg"}],
         {
-container: "#blueimp-gallery-carousel",
-startSlideshow: false,
+          container: "#photo-viewer",
+          startSlideshow: false,
           carousel: true
         }
-      );
+        );
+
+      $("#photo-viewer")
     });
 </script>
 
   </head>
   <body class="page-photos">
+    <h1 class="superheader">Aerialist San Francisco circus entertainment</h1>
     <div class="supercolumn">
       <div class="column">
         <ul id="navbar">
@@ -39,19 +42,21 @@ startSlideshow: false,
           
           <li id="navtab-booking"><a href="/booking/">Booking</a></li>
           
+          
+          <li id="navtab-shows"><a href="http://cassandradandra.blogspot.com/">Shows</a></li>
         </ul>
     
         
-<div id="blueimp-gallery-carousel" class="blueimp-gallery blueimp-gallery-carousel">
+<div id="photo-viewer" class="blueimp-gallery blueimp-gallery-carousel blueimp-gallery-controls">
   <div class="slides"></div>
   <h3 class="title"></h3>
   <a class="prev">&lt;</a>
   <a class="next">&gt;</a>
   <a class="play-pause"></a>
-  <ol class="indicator"></ol>
 </div>
 <script type="text/javascript" src="/static/js/blueimp-helper.js"></script>
-<script type="text/javascript" src="/static/js/blueimp-gallery.js"></script>
+<script type="text/javascript" src="/static/js/blueimp-gallery-modified.js"></script>
+<script type="text/javascript" src="/static/js/jquery.blueimp-gallery.js"></script>
 
       </div>
       <div id="book-dialog" title="Guide to Booking an Aerialist">
@@ -65,7 +70,7 @@ startSlideshow: false,
 
           <p>Email Cassandra for more information and a quote.</p>
 
-          <p style="text-align: center;"><a href="mailto:dandra.cassandra@gmail.com">dandra.cassandra@gmail.com</a></p>
+          <p style="text-align: center;"><a href="mailto:cassandra.performs@gmail.com">cassandra.performs@gmail.com</a></p>
         </div>
       </div>  
     </div>
