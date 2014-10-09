@@ -14,6 +14,9 @@
 
  * every GROUP (eg everything inside of the curly braces) should have a comma after
  * the second brace except the last one.
+ *
+ * One more thing -- double quotes (") INSIDE of a quoted string should be escaped
+ * like \" (put a backslash in front of it).
  */
 
 
