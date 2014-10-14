@@ -23,8 +23,9 @@
 
 loadShows([
 
- {"title":"The Sullied Dove",
+ {"title":"The Soiled Dove",
   "content":"Tickets available <a href=\"http://tickets.glittertix.com/events/series/THE+SOILED+DOVE\">HERE</a>",
+  "date":"12/4/2014",
   "website":{
     "link":"https://www.facebook.com/events/1465742593679251/",
     "text":"SoiledDove/Facebook"},
