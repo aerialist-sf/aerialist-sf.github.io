@@ -10,9 +10,37 @@
     <link type="text/css" rel="stylehseet" href="/static/jquery/css/jquery-ui.min.css" />
     <link type="text/css" rel="stylesheet" href="/static/site.css" />
     
+<script type="text/javascript">
+  $(document).ready(function() {
+      $.ajax({
+        //url:"/static/js/test-data.js",
+        url:"https://raw.githubusercontent.com/aerialist-sf/aerialist-sf.github.io/data/shows.js",
+        dataType:"jsonp",
+        crossDomain:true,
+        jsonp:false,
+        jsonpCallback:"loadShows"});
+    });
+
+  var loadShows = function(shows) {
+    var tmpl = _.template($("#show").text());
+    // Sort the shows by date
+    shows = _.chain(shows)
+      .sortBy(function(show) { return Date.parse(show.date); })
+      .reverse()
+      .value();
+    _.each(shows, function(show) {
+        // Do any pre-render formatting of the received data
+        show.date = new Date(Date.parse(show.date));
+        });
+    // now render them
+    _.each(shows, function(show) {
+        $("#shows").append($(tmpl(show)));
+    });
+  };
+</script>
 
   </head>
-  <body class="page-photos">
+  <body class="page-shows">
     <h1 class="superheader">SF Aerialist in San Francisco circus entertainment</h1>
     <div class="supercolumn">
       <div class="column">
@@ -20,7 +48,7 @@
           
           <li id="navtab-index"><a href="/">Home</a></li>
           
-          <li id="navtab-photos" class="active"><a href="/photos/">Photos</a></li>
+          <li id="navtab-photos"><a href="/photos/">Photos</a></li>
           
           <li id="navtab-video"><a href="/video/">Video</a></li>
           
@@ -28,19 +56,21 @@
           
           <li id="navtab-booking"><a href="/booking/">Booking</a></li>
           
+          <li id="navtab-shows" class="active"><a href="/shows/">Shows</a></li>
           
-          <li id="navtab-shows"><a href="http://cassandradandra.blogspot.com/" target="_new">Shows</a></li>
         </ul>
     
         
-<div class="thirds-col centered">
-  <a href="/photos_rjmuna"><img src="/static/img/photos_rjmuna_thumbnail.jpg" /></a>
-</div>
-<div class="thirds-col centered">
-  <h1>there</h1>
-</div>
-<div class="thirds-col centered">
-  <h1>sweetie</h1>
+<script type="text/template" id="show">
+  <div class="show-block">
+    <h1><%= title %></h1>
+    <h3><% print(date.toDateString()); %></h3>
+    <img src="<%=img %>" /></br>
+    <p><%= content %></p>
+    <p><a href="<%= website.link %>"><%= website.text %></a></p>
+  </div>
+</script>
+<div id="shows">
 </div>
 
       </div>

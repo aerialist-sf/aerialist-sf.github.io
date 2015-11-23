@@ -26,12 +26,19 @@
   font-family: PrintClearly;
   src: url(/static/fonts/PrintClearly_TT.ttf);
 }
+@font-face {
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Yanone Kaffeesatz Light'), local('YanoneKaffeesatz-Light'), url(https://fonts.gstatic.com/s/yanonekaffeesatz/v7/We_iSDqttE3etzfdfhuPRQu-MN34z13_ekgfqZIJiYv3rGVtsTkPsbDajuO5ueQw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
 
 /* basics */
 body {
   margin: 0;
   background-color: #000;
-  color: rgb(186, 200, 213);
+  color: white;
   font-family: PrintClearly;
   font-size: 14pt;
 }
@@ -60,18 +67,25 @@ h3 {
   margin: 0;
 }
 
+.clearfix {
+  width: auto;
+  overflow: none;
+}
 /* structure */
 .supercolumn {
-  max-width: 1400px;
+  max-width: 1300px;
   min-height: 873px;
   margin: 0 auto;
   position: relative;
 }
 body.page-index .supercolumn {
-  background: #000 url(/static/img/blindfolded.jpg) no-repeat -202px -327px;
+  background: #000 url(/static/img/index_bg.jpg) no-repeat 0 center;
 }
 body.page-contact .supercolumn {
   background: #000 url(/static/img/contact.jpg) no-repeat 100% 0;
+}
+body.page-about .supercolumn {
+  background: #000 url("/static/img/blindfolded.jpg") no-repeat scroll -111px -342px;
 }
 
 h1.superheader {
@@ -90,7 +104,7 @@ h1.superheader {
   color: #fff;
 }
 .column a:hover {
-  color: rgb(201, 9, 213);
+  color: #ffecb3;
 }
 .half-col {
   width: 50%;
@@ -101,8 +115,78 @@ h1.superheader {
   padding-top: 3em;
 }
 
+.thirds-col {
+  width: 33.3%;
+  overflow: none;
+  float: left;
+}
+.two-thirds-col {
+  width: 66.6%;
+  overflow: none;
+  float: left;
+}
+
 .centered {
   text-align: center;
+}
+
+/* 
+ * gallery styles 
+ */
+.photo-thumb {
+  position: relative;
+  margin: 4em 0 8em
+}
+.photo-thumb a {
+  display: block;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+.photo-thumb a img,
+.photo-thumb a .caption { 
+  display: block;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  transition: opacity .5s;
+}
+.photo-thumb a .caption { 
+  opacity: 0;
+  background-color: #121212;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 1.7em;
+  letter-spacing: 0.5em;
+  line-height: 1.8em;
+  color: #ffecb3;
+  text-transform: uppercase;
+}
+.photo-thumb a .caption p {
+  padding: 1em 0;
+}
+.photo-thumb a:hover img { opacity: 0; }
+.photo-thumb a:hover .caption { opacity: 1; }
+
+.photo-nav-tab a:visited,
+.photo-nav-tab a:hover,
+.photo-nav-tab a {
+  display: block;
+  width: 200px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #121212;
+  color: #ffecb3;
+  padding: 1em 0;
+}
+.photo-nav-tab.left {
+  float: left;
+}
+.photo-nav-tab.right {
+  float: right;
 }
 
 /* elements */
@@ -113,7 +197,8 @@ ul#navbar {
   list-style: none;
   border-bottom: 1px solid rgba(255,255,255,.2);
   margin: 0 0 1em 0;
-  font-family: Aracne;
+  font-family: 'Yanone Kaffeesatz';
+  text-transform: uppercase;
 }
 
 ul#navbar li a,
@@ -123,7 +208,7 @@ ul#navbar li a:visited {
   display: block;
   float: left;
   padding: .25em 0;
-  color: rgb(186, 200, 213);
+  color: #FFECB3;
 }
 
 ul#navbar li a:hover,
@@ -152,7 +237,8 @@ ul#navbar li.active a:hover {
   color: rgb(201, 9, 213);
 }
 .hero-unit img {
-  width: 100%;
+  width: 479px;  /* NOTE scale picture, remove me */
+  margin: 111px 0 0 495px;
 }
 
 .bio-unit {
@@ -169,7 +255,7 @@ ul#navbar li.active a:hover {
 }
 
 .bigdot span {
-  color: rgb(201, 9, 213);
+  color: #ffecb3;
   font-size: 5em;
   line-height: .2em;
   vertical-align: -22px;
@@ -198,15 +284,14 @@ body.page-contact {
 }
 #book-dialog .content {
   font-size: 13pt;
-  padding: 1em 400px 3em 1em;
-  background: transparent url(/static/img/rigging_drawing_sm.png) no-repeat right top;
+  padding: 1em;
 }
 #book-dialog .content a,
 #book-dialog .content a:visited {
   color: #fff;
 }
 #book-dialog .content a:hover {
-  color: rgb(201, 9, 213);
+  color: #ffecb3;
 }
 
 #book-dialog .content p {
@@ -226,7 +311,7 @@ body.page-contact {
 .ui-dialog {
   z-index: 10;
   background-color: #000;
-  border: rgb(186, 200, 213) 4px solid;
+  border: #ffecb3 4px solid;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   -o-border-radius: 15px;
@@ -234,7 +319,7 @@ body.page-contact {
 }
 .ui-dialog-titlebar {
   text-align: center;
-  color: rgb(186, 200, 213);
+  color: #ffecb3;
   text-transform: uppercase;
   font-size: 1.2em;
   line-height: 2em;
