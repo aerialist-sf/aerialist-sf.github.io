@@ -10,6 +10,28 @@
     <link type="text/css" rel="stylehseet" href="/static/jquery/css/jquery-ui.min.css" />
     <link type="text/css" rel="stylesheet" href="/static/site.css" />
     
+<link type="text/css" rel="stylesheet" href="/static/css/blueimp-gallery.css" />
+<script type="text/javascript">
+  $(document).ready(function() {
+        var options = {
+          container: "#photo-viewer",
+          startSlideshow: false
+        }
+
+      $('.links a').on('click', function (event) {
+        event.preventDefault();
+        event = event || window.event;
+        var target = event.target || event.srcElement,
+            link = target.href ? target : $(target).parents('a')[0];
+        console.log("target: ", target);
+        console.log("link: ", link);
+        options.index = link;
+        options.event = event;
+        links = $('.links a');
+        blueimp.Gallery(links, options);
+      });
+    });
+</script>
 
   </head>
   <body class="page-gallery">
@@ -33,30 +55,111 @@
         </ul>
     
         
+<div class="links">
+
 <div class="thirds-col centered photo-thumb">
-  <a href="/photos_rjmuna">
-    <img src="/static/img/photos_thumbnail_rjmuna.jpg" />
+  <a href="/static/slides/main/000_straps.jpg">
+    <img src="/static/slides/main/postcards/postcard_000_straps.jpg" />
     <div class="caption">
-      <p>Photos from RJ Muna</p>
+      <p>RJ Muna</p>
     </div>
   </a>
 </div>
+
 <div class="thirds-col centered photo-thumb">
-  <a href="/photos_vaudevire/">
-    <img src="/static/img/photos_thumbnail_vaudevire.jpg" />
+  <a href="/static/slides/main/00_CodyMolicaLagunitas.jpg">
+    <img src="/static/slides/main/postcards/postcard_00_CodyMolicaLagunitas.jpg" />
     <div class="caption">
-      <p>Photos from Vau de Vire</p>
+      <p>Lagunitas Circus</p>
     </div>
   </a>
 </div>
+
 <div class="thirds-col centered photo-thumb">
-  <a href="/photos_other/">
-    <img src="/static/img/photos_thumbnail_other.jpg" />
+  <a href="/static/slides/main/01_10481378_727497793965008_5742983680427669805_n.jpg">
+    <img src="/static/slides/main/postcards/postcard_01_10481378_727497793965008_5742983680427669805_n.jpg" />
     <div class="caption">
-      <p><br/>shows</p>
+      <p>Kinetic Carnivale</p>
     </div>
   </a>
 </div>
+
+<div class="thirds-col centered photo-thumb">
+  <a href="/static/slides/main/10869845_435141813304750_7848431832534633072_o.jpg">
+    <img src="/static/slides/main/postcards/postcard_10869845_435141813304750_7848431832534633072_o.jpg" />
+    <div class="caption">
+      <p>Treat St Social Club</p>
+    </div>
+  </a>
+</div>
+
+<div class="thirds-col centered photo-thumb">
+  <a href="/static/slides/main/10879845_CassandraCornell_151028_474.jpg">
+    <img src="/static/slides/main/postcards/postcard_10879845_CassandraCornell_151028_474.jpg" />
+    <div class="caption">
+      <p>RJ Muna</p>
+    </div>
+  </a>
+</div>
+
+<div class="thirds-col centered photo-thumb">
+  <a href="/static/slides/main/11018945_10153183120404744_3596676350533267845_o.jpg">
+    <img src="/static/slides/main/postcards/postcard_11018945_10153183120404744_3596676350533267845_o.jpg" />
+    <div class="caption">
+      <p>Edwardian Ball</p>
+    </div>
+  </a>
+</div>
+
+<div class="thirds-col centered photo-thumb">
+  <a href="/static/slides/main/11988226_10153577281445270_8225245389870337947_n.jpg">
+    <img src="/static/slides/main/postcards/postcard_11988226_10153577281445270_8225245389870337947_n.jpg" />
+    <div class="caption">
+      <p>StarStar Revue</p>
+    </div>
+  </a>
+</div>
+
+<div class="thirds-col centered photo-thumb">
+  <a href="/static/slides/main/CassandraCornell_151028_281.jpg">
+    <img src="/static/slides/main/postcards/postcard_CassandraCornell_151028_281.jpg" />
+    <div class="caption">
+      <p>RJ Muna</p>
+    </div>
+  </a>
+</div>
+
+<div class="thirds-col centered photo-thumb">
+  <a href="/static/slides/main/Screenshot 2015-10-06 at 10.13.58 PM.png">
+    <img src="/static/slides/main/postcards/postcard_Screenshot 2015-10-06 at 10.13.58 PM.png" />
+    <div class="caption">
+      <p>Symbiosis Festival</p>
+    </div>
+  </a>
+</div>
+
+</div>
+
+<div id="photo-viewer" class="blueimp-gallery blueimp-gallery-controls">
+  <div class="slides"></div>
+  <h3 class="title"></h3>
+  <a class="prev">&lt;</a>
+  <a class="next">&gt;</a>
+  <a class="close">×</a>
+  <a class="play-pause"></a>
+  <ol class="indicator"></ol>
+</div>
+<div class="clearfix">
+  <div class="photo-nav-tab left"></div>
+  <div class="photo-nav-tab right"></div>
+</div>
+
+<script type="text/javascript" src="/static/js/blueimp-helper.js"></script>
+<script type="text/javascript" src="/static/js/blueimp-gallery-modified.js"></script>
+<script type="text/javascript" src="/static/js/jquery.blueimp-gallery.js"></script>
+
+<script type="text/javascript">
+</script>
 
       </div>
       <div id="book-dialog" title="Contact Cassandra">
