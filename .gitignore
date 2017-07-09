@@ -8,6 +8,7 @@ __pycache__/
 # Distribution / packaging
 .Python
 env/
+site/
 bin/
 build/
 develop-eggs/
@@ -18,6 +19,7 @@ lib64/
 parts/
 sdist/
 var/
+node_modules/
 *.egg-info/
 .installed.cfg
 *.egg
@@ -52,3 +54,7 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
+
+## wtf
+.*.swp
+.*.swo
