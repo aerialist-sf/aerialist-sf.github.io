@@ -18,7 +18,7 @@
           startSlideshow: false
         }
 
-      $('.links a').on('click', function (event) {
+      $('.gallery-links a').on('click', function (event) {
         event.preventDefault();
         event = event || window.event;
         var target = event.target || event.srcElement,
@@ -27,7 +27,7 @@
         console.log("link: ", link);
         options.index = link;
         options.event = event;
-        links = $('.links a');
+        links = $('.gallery-links a');
         blueimp.Gallery(links, options);
       });
     });
@@ -55,9 +55,9 @@
         </ul>
     
         
-<div class="links">
+<div class="gallery-links">
 
-<div class="thirds-col centered photo-thumb">
+<div class="centered photo-thumb">
   <a href="/static/slides/main/000_straps.jpg">
     <img src="/static/slides/main/thumbnails/THUMBNAIL000_straps.jpg" />
     <div class="caption">
@@ -66,7 +66,7 @@
   </a>
 </div>
 
-<div class="thirds-col centered photo-thumb">
+<div class="centered photo-thumb">
   <a href="/static/slides/main/10869845_435141813304750_7848431832534633072_o.jpg">
     <img src="/static/slides/main/thumbnails/THUMBNAIL10869845_435141813304750_7848431832534633072_o.jpg" />
     <div class="caption">
@@ -75,7 +75,7 @@
   </a>
 </div>
 
-<div class="thirds-col centered photo-thumb">
+<div class="centered photo-thumb">
   <a href="/static/slides/main/10879845_CassandraCornell_151028_474.jpg">
     <img src="/static/slides/main/thumbnails/THUMBNAIL10879845_CassandraCornell_151028_474.jpg" />
     <div class="caption">
@@ -84,7 +84,7 @@
   </a>
 </div>
 
-<div class="thirds-col centered photo-thumb">
+<div class="centered photo-thumb">
   <a href="/static/slides/main/20170616_0968_The_Soiled_Dove_by_Jon_Bauer.jpg">
     <img src="/static/slides/main/thumbnails/THUMBNAIL20170616_0968_The_Soiled_Dove_by_Jon_Bauer.jpg" />
     <div class="caption">
@@ -93,7 +93,7 @@
   </a>
 </div>
 
-<div class="thirds-col centered photo-thumb">
+<div class="centered photo-thumb">
   <a href="/static/slides/main/codymolicaTSD2017split.jpg">
     <img src="/static/slides/main/thumbnails/THUMBNAILcodymolicaTSD2017split.jpg" />
     <div class="caption">
@@ -102,7 +102,7 @@
   </a>
 </div>
 
-<div class="thirds-col centered photo-thumb">
+<div class="centered photo-thumb">
   <a href="/static/slides/main/full_body.jpg">
     <img src="/static/slides/main/thumbnails/THUMBNAILfull_body.jpg" />
     <div class="caption">
@@ -111,7 +111,7 @@
   </a>
 </div>
 
-<div class="thirds-col centered photo-thumb">
+<div class="centered photo-thumb">
   <a href="/static/slides/main/SFstationSD2017.jpg">
     <img src="/static/slides/main/thumbnails/THUMBNAILSFstationSD2017.jpg" />
     <div class="caption">
@@ -120,7 +120,7 @@
   </a>
 </div>
 
-<div class="thirds-col centered photo-thumb">
+<div class="centered photo-thumb">
   <a href="/static/slides/main/spinsdove.jpg">
     <img src="/static/slides/main/thumbnails/THUMBNAILspinsdove.jpg" />
     <div class="caption">
