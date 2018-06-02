@@ -197,6 +197,7 @@ h1.superheader {
 
 /* elements */
 ul#navbar {
+  visibility: hidden;
   width: 100%;
   overflow: auto;
   padding: 0 150px 0 50px;
@@ -209,7 +210,7 @@ ul#navbar {
 
 ul#navbar li a,
 ul#navbar li a:visited {
-  width: 150px;
+  width: 180px;
   text-align: center;
   display: block;
   float: left;
