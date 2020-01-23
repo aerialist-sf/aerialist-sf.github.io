@@ -34,9 +34,6 @@ $(function() {
   $("#navbar").css("visibility", "visible");
 });
 
-$(document).ready(function() {
-});
-
 
 var potential_close = function(e) {
   /* make sure that anything other than a click on something inside of the modal
